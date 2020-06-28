@@ -37,7 +37,7 @@ export class ProductServices
 
     fetchData()
     {
-        this.http.get<{[key:string]:Product}>("http://localhost:3006/api/product")
+        this.http.get<{[key:string]:Product}>("http://localhost:3000/api/product")
     .pipe(map(responseData => {
         const postArray =[];
         for (const key in responseData)

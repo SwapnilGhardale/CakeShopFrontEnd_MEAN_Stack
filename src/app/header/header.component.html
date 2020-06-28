@@ -31,13 +31,14 @@
           </div>
         </li>
         <li class="nav-item active">
-          <img src="assets/shield.svg" style="height:42px; width: 32px;">
+          <img src="assets/shield.svg" *ngIf="!session_set" style="height:42px; width: 32px;">
       </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="!session_set" routerLink="/login">Login</a>
         </li>
         <li class="nav-item active">
           <img src="assets/login.svg" style="height:30px; width: 30px; margin-top: 6px;">
+        </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="!session_set" routerLink="/register">Signup</a>
         </li>

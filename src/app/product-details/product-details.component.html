@@ -21,6 +21,10 @@
        <p>
         Description :     {{products.description}}
        </p>
+       <p>
+        <span *ngIf="products.veg">Veg</span>
+        <span *ngIf="!products.veg">Non-Veg</span>
+       </p>
        <h4>
            Select Qty:
        </h4>

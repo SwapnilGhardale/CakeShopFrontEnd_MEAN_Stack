@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
 
     console.log(postData);
 
-    this.http .post('http://localhost:3006/api/signup',postData).subscribe(responseData => {
+    this.http .post('http://localhost:3000/api/signup',postData).subscribe(responseData => {
         console.log(responseData);
         alert("welcome account is created");
       });

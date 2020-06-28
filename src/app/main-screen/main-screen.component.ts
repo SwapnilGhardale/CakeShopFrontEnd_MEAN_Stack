@@ -18,7 +18,7 @@ export class MainScreenComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.http.get<{[key:string]:Product}>("http://localhost:3006/api/product")
+    this.http.get<{[key:string]:Product}>("http://localhost:3000/api/product")
     .pipe(map(
       responseData => 
       {
@@ -46,5 +46,6 @@ export class MainScreenComponent implements OnInit {
    
    
   }
+  
 
 }
