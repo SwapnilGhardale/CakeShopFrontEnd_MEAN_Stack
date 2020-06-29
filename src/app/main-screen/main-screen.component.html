@@ -45,110 +45,19 @@
       </div>
   </div>
   
-<div class="container mt-5">
+<div class="container mt-5" >
   <div class="row">
-      <div class="col-md-3">
-          <div class="card">
-              <img src="assets/cake1.jpg"  alt="card-1" class="card-img-top">
-              <div class="card-body">
-                  <h5>Cake 1</h5>
-                  <h6>200</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-              </div>
-          </div>
-      </div>
       
-      <div class="col-md-3">
-          <div class="card">
-              <img src="assets/cake4.jpg"  alt="card-1" class="card-img-top">
-              <div class="card-body">
-                  <h5>cake2</h5>
-                  <h6>300</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-              </div>
-          </div>
-      </div>
-      
-      <div class="col-md-3">
-          <div class="card">
-              <img src="assets/cake3.jpg"  alt="card-1" class="card-img-top">
-              <div class="card-body">
-                  <h5>Cake 3</h5>
-                  <h6>250</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-              </div>
-          </div>
-      </div>
-      
-      
-      
-      <div class="col-md-3">
-          <div class="card">
-              <img src="assets/cake4.jpg"  alt="card-1" class="card-img-top">
-              <div class="card-body">
-                  <h5>Cake 4</h5>
-                  <h6>350</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-              </div>
-          </div>
-      </div>
-
-      <div class="col-md-3">
-        <div class="card">
-            <img src="assets/cake5.jpg"  alt="card-1" class="card-img-top">
-            <div class="card-body">
-                <h5>Cake 5</h5>
-                <h6>280</h6>
-                <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="col-md-3">
-      <div class="card">
-          <img src="assets/cake6.jpg" alt="card-1" class="card-img-top">
-          <div class="card-body">
-              <h5>Cake 6</h5>
-              <h6>450</h6>
-              <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-          </div>
-      </div>
-  </div>
-
-  
-  <div class="col-md-3">
-    <div class="card">
-        <img src="assets/cake7.jpg"  alt="card-1" class="card-img-top">
-        <div class="card-body">
-            <h5>Cake 7</h5>
-            <h6>450</h6>
-            <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-        </div>
-    </div>
-</div>
 
 
-<div class="col-md-3">
-  <div class="card">
-      <img src="assets/cake8.jpg"  alt="card-1" class="card-img-top">
-      <div class="card-body">
-          <h5>Cake 8</h5>
-          <h6>550</h6>
-          <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-      </div>
-  </div>
-</div>
-
-
-    
+  <!--  <div *ngIf="name=='Cakes'"></div>-->
     <div class="col-md-3" *ngFor="let i of products">
-      <div class="card">
-          <img src="http://localhost:3000/{{i.productImagePath}}"  alt="card-1" class="card-img-top">
+      <div class="card" style="margin-top: 10px;">
+          <img src="http://localhost:3000/{{i.productImagePath}}" style="width: 255px; height: 188px;" alt="card-1" class="card-img-top">
           <div class="card-body">
             
       <a routerLink="/product-detail/{{i._id}}">
-              <h5>{{i.name}}<span *ngIf="i.veg"> Veg</span><span *ngIf="!i.veg"> Non-Veg</span></h5>
+              <h5>{{i.name}}</h5><span *ngIf="i.veg"><img src="assets/veg.svg" style="height: 30px;" alt="Veg"></span><span *ngIf="!i.veg"><img src="assets/non-veg.svg" style="height: 30px;" alt="Veg"></span>
               <h6> Price : {{i.price}} Rs.</h6>
               <p>{{i.description}}</p>
       </a>
@@ -156,10 +65,9 @@
           </div>
       </div>
     </div>
-
+</div>
 
   </div>
-</div>
 
 
 
@@ -174,58 +82,7 @@
 </div>
 
 
-<div class="container mt-5 pb-5">
-  <div class="row">
-      <div class="col-md-3">
-          <div class="card">
-            <img src="assets/pro1.jpg" alt="card-1" class="card-img-top">
-              <div class="card-body">
-                <h5>Chocolate pastry</h5>
-                <h6>50</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-            </div>
-          </div>
-      </div>
-      
-      <div class="col-md-3">
-          <div class="card">
-            <img src="assets/pro2.jpg" alt="card-1" class="card-img-top">
-              <div class="card-body">
-                <h5>cookies</h5>
-                <h6>40</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-            </div>
-          </div>
-      </div>
-      
-      <div class="col-md-3">
-          <div class="card">
-            <img src="assets/pro3.jpg" alt="card-1" class="card-img-top">
-              <div class="card-body">
-                <h5>Cupcakes</h5>
-                <h6>20</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-            </div>
-          </div>
-      </div>
-      
-      
-      
-      <div class="col-md-3">
-          <div class="card">
-            <img src="assets/pro4.jpg" alt="card-1" class="card-img-top">
-              <div class="card-body">
-                <h5>chocolates</h5>
-                <h6>100</h6>
-                  <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</button>
-            </div>
-          </div>
-      </div>
-  </div>
-</div>
 
-
-</div>
 
 
 <div class="container-fluid offer pt-3 pb-3 bg-teal d-none d-md-block">
