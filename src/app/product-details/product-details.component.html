@@ -1,7 +1,7 @@
 <div class="row" >
        
     <div class="col-lg-4 text-center">
-            <img width="400px" height="300px" src="http://localhost:3006/{{products.productImagePath}}" alt="">
+            <img width="400px" height="300px" src="http://localhost:3000/{{products.productImagePath}}" alt="">
         </div>
 
 
@@ -42,4 +42,22 @@
             Add to Cart  
        </button>
     </div>
+</div>
+<div class="container mt-5">
+    <div class="row"><div class="col-6 col-lg-4 col-md-4 col-sm-4 font-weight-bold">Similar Products</div></div>
+    <div class="row">
+<div class="col-md-3" *ngFor="let i of similarproducts">
+    <div class="card">
+        <img src="http://localhost:3000/{{i.productImagePath}}"  alt="card-1" class="card-img-top">
+        <div class="card-body">
+          
+    <a href="/product-detail/{{i._id}}">
+            <h5>{{i.name}}<span *ngIf="i.veg"> Veg</span><span *ngIf="!i.veg"> Non-Veg</span></h5>
+            <h6> Price : {{i.price}} Rs.</h6>
+            <p>{{i.description}}</p>
+    </a>
+</div>
+    </div>
+  </div>
+  </div>
 </div>

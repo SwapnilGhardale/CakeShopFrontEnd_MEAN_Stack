@@ -36,14 +36,16 @@ export class LoginComponent implements OnInit {
 
     this.http.post('http://localhost:3000/api/signin',login).pipe(map(response=>{return response}))
     .subscribe(responseData => {
-      console.log(responseData);
+      //console.log(responseData);
     
       if(responseData['user'].name)
      {
         this.handleAuthentication(responseData['user'].email,responseData['user']._id,responseData['user'].name);
         
-        this.router.navigateByUrl('/main');
-      }
+        this.router.navigateByUrl('/main').then(result=>{
+          window.location.reload();
+        });
+       }
     })
     form.reset();
   }

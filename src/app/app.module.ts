@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { CartServices } from './cart.service';
 import { NewOrderServices } from './neworder.service';
 import { FooterComponent } from './footer/footer.component';
+import { MyordersComponent } from './myorders/myorders.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     RegistrationComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    MyordersComponent
   ],
   imports: [
     BrowserModule,

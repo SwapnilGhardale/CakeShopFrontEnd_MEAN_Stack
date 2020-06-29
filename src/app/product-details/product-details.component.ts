@@ -16,6 +16,7 @@ import { ProductNew } from '../productNew.model';
 export class ProductDetailsComponent implements OnInit {
   id: number;
   products : any;
+  similarproducts:Product[];
   @ViewChild('ingre_qty') ingre_qty : ElementRef;
 
   constructor( private route: ActivatedRoute,
@@ -28,15 +29,40 @@ export class ProductDetailsComponent implements OnInit {
       
 
      this.http.get("http://localhost:3000/api/product/"+id2).subscribe(posts =>{
-        console.log("array"+posts);
+        //console.log("array"+posts);
   
        this.products = posts;
+     });
+
+     this.http.get<{[key:string]:Product}>("http://localhost:3000/api/product")
+    .pipe(map(
+      responseData => 
+      {
+        const postArray =[];
+        for (const key in responseData)
+        {
+            if(responseData.hasOwnProperty(key))
+            {
+                postArray.push({...responseData[key],id:key})
+            }
+        }
+
+        return postArray;
+           
+    })).subscribe(posts =>{
+    const products1=[];
+       for(var i=0;i<posts.length;i++){
+         if(this.products.category.name==posts[i].category.name){
+        products1.push({...posts[i],id:i})
+         }
+       }
+       this.similarproducts=products1;
        
-      
-     })
-   
-    ;
-     
+       console.log(this.similarproducts)
+        
+       
+     });
+
     }
 
     addTocart()

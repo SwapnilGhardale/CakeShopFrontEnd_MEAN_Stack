@@ -27,8 +27,13 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#" *ngFor="let cat of category">{{cat.name}}</a>
-          
           </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="session_set" routerLink="/myorders">My Orders</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/mycart">Cart</a>
         </li>
         <li class="nav-item active">
           <img src="assets/shield.svg" *ngIf="!session_set" style="height:42px; width: 32px;">
