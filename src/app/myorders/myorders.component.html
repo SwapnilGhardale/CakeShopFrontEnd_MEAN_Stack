@@ -5,13 +5,12 @@
 <table class="table table-sm ">
     <thead style="background-color: lightgrey;">
       <tr>
-        <th scope="col">Sr No</th>
-       
-                <th scope="col">Order Id</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total Amount</th>
-                <th scope="col">DateTime</th>
-                <th scope="col">Status</th>
+        <th scope="col">Sr. No</th>
+        <th scope="col">Order Id</th>
+        <th scope="col">Variety of Product</th>
+        <th scope="col">Total Amount</th>
+        <th scope="col">DateTime</th>
+        <th scope="col">Status</th>
      
       </tr>
     </thead>
@@ -22,7 +21,7 @@
         <td>{{i._id}}</td>
         <td>{{i.products.length}}</td>
         <td>Rs. {{ i.amount}}</td>
-        <td>{{i.createdAt|date:"dd-MM-yyyy hh:mm:ss a":"Z"}}</td>
+        <td>{{i.createdAt|date:"dd-MM-yyyy hh:mm:ss a"}}</td>
         <td>{{i.status}}</td>
     
       </tr>

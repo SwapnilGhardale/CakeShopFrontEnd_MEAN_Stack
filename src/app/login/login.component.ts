@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         this.handleAuthentication(responseData['user'].email,responseData['user']._id,responseData['user'].name);
         
         this.router.navigateByUrl('/main').then(result=>{
-          window.location.reload();
+        //  window.location.reload();// if only 1 header present then the page needs to be refreshed so that header component will get active present information of "welcome, User",etc
         });
        }
     })
