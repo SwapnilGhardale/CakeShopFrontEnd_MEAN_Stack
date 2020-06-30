@@ -19,7 +19,7 @@ export class Header1Component implements OnInit {
   user = new BehaviorSubject<Userlogin>(null);
 
   username : string;
-  constructor(private productServi :ProductServices,private http: HttpClient, private router: Router) {}
+  constructor(private productServi :ProductServices, private router: Router) {}
 
   session_set = false;
 
@@ -33,30 +33,6 @@ if(sessionStorage.getItem("user_name")!=null){
 else{
   this.session_set=false;
 }
- 
-   
-    this.http.get<{[key:string]:Product}>("http://localhost:3000/api/categories")
-    .pipe(map(responseData => {
-        const postArray =[];
-        for (const key in responseData)
-        {
-          if(responseData.hasOwnProperty(key))
-            {
-                postArray.push({...responseData[key],id:key})
-            }
-        }
-
-        return postArray;
-           
-    })).subscribe(category =>{
-        console.log("category "+category);
-        this.category = category;
-        for(var i of this.category)
-        console.log(i.name)
-       //this.products = posts;
-     })
-   
-    ;
 
   }
 
