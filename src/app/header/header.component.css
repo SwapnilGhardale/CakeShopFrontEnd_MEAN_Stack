@@ -1,3 +1,14 @@
 .navbar{
     background-color: blanchedalmond;
 }
+
+.dropdown-item{
+    border: 1px solid  brown;
+    border-radius: 5px;
+    
+}
+
+.dropdown-item :hover{
+    background-color: bisque;
+}
+
