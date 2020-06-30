@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="carousel">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -49,7 +50,7 @@
   <div class="row">
     <div class="col-md-3" *ngFor="let i of products"> 
       <div *ngIf="i.category.name=='Cakes'">
-        <div class="card" style="margin-top: 10px;">
+        <div class="card" style="margin-top: 20px; height: 350px;">
           <img src="http://localhost:3000/{{i.productImagePath}}" style="width: 255px; height: 188px;" alt="product_img" class="card-img-top">
           <div class="card-body">
                 
@@ -86,7 +87,7 @@
       <div class="row">
         <div class="col-md-3" *ngFor="let i of products">
         <div *ngIf="i.category.name!='Cakes'">
-          <div class="card" style="margin-top: 10px;">
+          <div class="card" style="margin-top: 20px; height: 350px;">
               <img src="http://localhost:3000/{{i.productImagePath}}" style="width: 255px; height: 188px;" alt="product_img" class="card-img-top">
               <div class="card-body">
                 
