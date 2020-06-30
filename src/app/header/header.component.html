@@ -30,7 +30,7 @@
           </div>
         </li>
         <li class="nav-item active">
-          <img src="assets/order.svg" style="height:30px; width: 30px; padding-top: 5px;">
+          <img src="assets/order.svg" *ngIf="session_set" style="height:30px; width: 30px; padding-top: 5px;">
       </li>
         <li class="nav-item active">
           <a class="nav-link" *ngIf="session_set" routerLink="/myorders"><b>My Orders</b></a>
