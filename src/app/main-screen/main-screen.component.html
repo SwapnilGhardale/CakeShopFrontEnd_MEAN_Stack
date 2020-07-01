@@ -35,78 +35,89 @@
   </a>
 </div>
 
-<div class="container-fluid bg-light-gray" id="Cakes">
+<div class="container mt-5" id="Cakes">
+ 
+
   
-  <div class="container pt-5">
-     
-      <div class="row">
-        <h3>Cakes</h3>
-      </div>
-          <div class="row">
-          <div class="underline"></div>
-      </div>
-  </div>
-  
-<div class="container mt-5"  >
   <div class="row">
-    <div class="col-md-3" *ngFor="let i of products"> 
-      <div *ngIf="i.category.name=='Cakes'">
-        <div class="card" style="margin-top: 20px; height: 350px;">
-          <img src="http://localhost:3000/{{i.productImagePath}}" style="width: 248px; height: 188px;" alt="product_img" class="card-img-top">
-          <div class="card-body">
-                
-              <a routerLink="/product-detail/{{i._id}}">
-                      <h5>{{i.name}}</h5>
-                      <span *ngIf="i.veg"><img src="assets/veg.svg" style="height: 30px;" alt="Veg"></span>
-                      <span *ngIf="!i.veg"><img src="assets/non-veg.svg" style="height: 30px;" alt="Non-Veg"></span>
-                      <h6> Price : {{i.price}} Rs.</h6>
-              </a>
-                      <div>{{i.description|slice:0:20}}<span *ngIf="i.description.length>20">...</span></div>
-         
-          </div>
-       
-        </div>
-      </div>
-    </div>
-
+    <h3>Cakes</h3>
   </div>
+  <div class="row">
+    <div class="underline"></div>
+  </div>
+  <br>
+  <br>
 
+  <div class="container">
+    <div class="card-deck">
+      <div class="col-md-3" *ngFor="let i of products">
+        <div *ngIf="i.category.name=='Cakes'">
+        <div class="w-100 d-none d-md-block d-lg-none"></div>
+        <div class="card mb-4">
+            
+            <img  class="card-img-top img-fluid" src="http://localhost:3000/{{i.productImagePath}}" style="width: 100%; height: 150px;" alt="product_img">
+            <div class="card-body">
+              <a routerLink="/product-detail/{{i._id}}">
+                <h5>{{i.name}}</h5><span *ngIf="i.veg"><img src="assets/veg.svg" style="height: 30px;" alt="Veg"></span>
+                <span *ngIf="!i.veg"><img src="assets/non-veg.svg" style="height: 30px;" alt="Veg"></span>
+                <h6> Price : {{i.price}} Rs.</h6>
+        </a>
+                <div>{{i.description|slice:0:20}}<span *ngIf="i.description.length>20">...</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
 
 
 <div class="container mt-5" id="Pastries">
   <div id="Cookies">
     <div id="Chocolates">
 
- 
-
+  
   <div class="row">
     <h3>Other Products</h3>
   </div>
   <div class="row">
     <div class="underline"></div>
   </div>
-      <div class="row">
-        <div class="col-md-3" *ngFor="let i of products">
+  <br>
+  <br>
+
+  <div class="container">
+    <div class="card-deck">
+      <div class="col-md-3" *ngFor="let i of products">
         <div *ngIf="i.category.name!='Cakes'">
-          <div class="card" style="margin-top: 20px; height: 350px;">
-              <img src="http://localhost:3000/{{i.productImagePath}}" style="width: 245px; height: 188px;" alt="product_img" class="card-img-top">
-              <div class="card-body">
-                
-                <a routerLink="/product-detail/{{i._id}}">
-                        <h5>{{i.name}}</h5><span *ngIf="i.veg"><img src="assets/veg.svg" style="height: 30px;" alt="Veg"></span>
-                        <span *ngIf="!i.veg"><img src="assets/non-veg.svg" style="height: 30px;" alt="Veg"></span>
-                        <h6> Price : {{i.price}} Rs.</h6>
-                </a>
-                        <div>{{i.description|slice:0:20}}<span *ngIf="i.description.length>20">...</span></div>
-                
-              </div>
+        <div class="w-100 d-none d-md-block d-lg-none"></div>
+        <div class="card mb-4">
+            
+            <img  class="card-img-top img-fluid" src="http://localhost:3000/{{i.productImagePath}}" style="width: 100%; height: 150px;" alt="product_img">
+            <div class="card-body">
+              <a routerLink="/product-detail/{{i._id}}">
+                <h5>{{i.name}}</h5><span *ngIf="i.veg"><img src="assets/veg.svg" style="height: 30px;" alt="Veg"></span>
+                <span *ngIf="!i.veg"><img src="assets/non-veg.svg" style="height: 30px;" alt="Veg"></span>
+                <h6> Price : {{i.price}} Rs.</h6>
+        </a>
+                <div>{{i.description|slice:0:20}}<span *ngIf="i.description.length>20">...</span></div>
             </div>
-          </div>
         </div>
-        </div>
-        </div>
-      </div>
+    </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
 
 
 

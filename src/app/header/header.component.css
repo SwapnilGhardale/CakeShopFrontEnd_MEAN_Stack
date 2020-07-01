@@ -12,3 +12,13 @@
     background-color: bisque;
 }
 
+#navigation .navbar-nav li a,li{
+    float: right;
+    text-align: right;
+}
+
+@media (max-width: 575.98px) { 
+    .dropdown-item{
+        border: none;
+    }
+ }

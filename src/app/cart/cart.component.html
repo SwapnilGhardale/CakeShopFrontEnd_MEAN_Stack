@@ -1,84 +1,59 @@
 <app-header1></app-header1>
-<body style="background-color:lightgrey;">
+<h1 class="text-center">Products Cart</h1>
+<body>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Sr. No</th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let i of cart; let m = index">
-                        <td class="text-center" style="text-align: center"><strong>{{m+1}}</strong></td>
-                        <td class="col-sm-8 col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href=""> <img class="media-object" src="http://localhost:3000/{{i.product_image}}" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">{{i.product_name}}</h4>
-                            </div>
-                        </div>
-                        </td>
-                        <td class="col-sm-1 col-md-1 col-sm-1 col-md-1 text-center" style="text-align: center"><strong>{{i.product_count}}</strong></td>
-                        
-                        <td class="col-sm-1 col-md-1 text-center"><strong>{{i.product_price}}</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>{{i.product_count*i.product_price}}</strong></td>
-                        <td class="col-sm-1 col-md-1">
-                        <button type="button"  (click)="deleteCart(m)" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
-                    <tr *ngIf="cart.length === 0">
-                        <th class="text-center" colspan="7">
-                                    No Items In Cart.
-                            </th>
-                    </tr>
 
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>{{final_total}}</strong></h5></td>
-                    </tr>
-                    <!--tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Tax</h5></td>
-                        <td class="text-right"><h5><strong>{{final_total*0.01}}</strong></h5></td>
-                    </tr-->
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>{{final_total}}</strong></h3></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                        <button type="button" class="btn btn-default">
-                            
-                        </button></td>
-                        <td>
-                        <button type="button" (click)="placeOrder2()" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <label class="product-details">Product</label>
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Remove</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+  <div class="product" *ngFor="let i of cart; let m = index">
+    <div class="product-image">
+        <img class="media-object" src="http://localhost:3000/{{i.product_image}}" style="width: 72px; height: 72px;">
     </div>
+    <div class="product-details">
+      <div class="product-title">{{i.product_name}}</div>
+     
+    </div>
+    <div class="product-price">{{i.product_price}}</div>
+    <div class="product-quantity">
+        {{i.product_count}}
+    </div>
+    <div class="product-removal">
+        <button type="button"  (click)="deleteCart(m)" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+        </button>
+    </div>
+    <div class="product-line-price">{{i.product_count*i.product_price}}</div>
+  </div>
+
+  
+
+  <div class="totals">
+    <div class="totals-item">
+      <label>Subtotal</label>
+      <div class="totals-value" id="cart-subtotal">{{final_total}}</div>
+    </div>
+   
+    <div class="totals-item totals-item-total">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-total">{{final_total}}</div>
+    </div>
+  </div>
+      
+  <button type="button" (click)="placeOrder2()" class="btn btn-success checkout">
+    Checkout <span class="glyphicon glyphicon-play"></span>
+</button>
+
+      
 </div>
+
 </body>

@@ -9,7 +9,7 @@
 
 .underline{width: 100px; height: 2px; background-color: orangered;}
 
-.card{border: none;}
+
 .bg-light-gray{background-color: rgba(111,111,111,0.09)}
 
 .media img{ max-width: 120px; height: auto;}
@@ -23,3 +23,19 @@
 .blog .media img{ max-width: 200px; height: auto;}
 
 footer ul{text-decoration: none; list-style-type: none;}
+
+@media (max-width: 575.98px) { 
+    h3,.underline{
+        margin-left: 30px;
+    }
+ }
+
+
+  
+  
+ 
+
+
+
+
+
