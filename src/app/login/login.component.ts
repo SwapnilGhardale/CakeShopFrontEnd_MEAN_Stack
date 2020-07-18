@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
     //alert(password);
 
-    this.http.post('http://localhost:3000/api/signin',login).pipe(map(response=>{return response}))
+    this.http.post(localStorage.getItem('url')+'/api/signin',login).pipe(map(response=>{return response}))
     .subscribe(responseData => {
       //console.log(responseData);
     

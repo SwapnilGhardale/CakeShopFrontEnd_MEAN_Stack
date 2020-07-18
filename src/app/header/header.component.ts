@@ -35,7 +35,7 @@ else{
 }
  
    
-    this.http.get<{[key:string]:Product}>("http://localhost:3000/api/categories")
+    this.http.get<{[key:string]:Product}>(localStorage.getItem('url')+'/api/categories')
     .pipe(map(responseData => {
         const postArray =[];
         for (const key in responseData)

@@ -28,13 +28,13 @@ export class ProductDetailsComponent implements OnInit {
 
       
 
-     this.http.get("http://localhost:3000/api/product/"+id2).subscribe(posts =>{
+     this.http.get(localStorage.getItem('url')+'/api/product/'+id2).subscribe(posts =>{
         //console.log("array"+posts);
   
        this.products = posts;
      });
 
-     this.http.get<{[key:string]:Product}>("http://localhost:3000/api/product")
+     this.http.get<{[key:string]:Product}>(localStorage.getItem('url')+'/api/product')
     .pipe(map(
       responseData => 
       {

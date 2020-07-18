@@ -22,7 +22,7 @@ export class RegistrationComponent implements OnInit {
 
   onCreatePost(postData: { name: string; lastname: string, email: string; password: string, address: string; })
   {
-    this.http.post('http://localhost:3000/api/signup',postData)
+    this.http.post(localStorage.getItem('url')+'/api/signup',postData)
     .subscribe(responseData => {
         console.log(responseData);
         

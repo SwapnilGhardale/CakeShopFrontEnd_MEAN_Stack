@@ -80,7 +80,7 @@ export class CartComponent implements OnInit {
 
     // console.log(postData);
 
-    this.http.post('http://localhost:3000/api/order/create',postData).subscribe(responseData => {
+    this.http.post(localStorage.getItem('url')+'/api/order/create',postData).subscribe(responseData => {
         console.log(responseData);
         
         

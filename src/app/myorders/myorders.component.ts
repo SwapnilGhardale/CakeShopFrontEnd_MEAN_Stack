@@ -17,7 +17,7 @@ user_id:any;
   ngOnInit(): void {
     this.user_id=localStorage.getItem("user_id");
 
-    this.http.get<{[key:string]:Order}>("http://localhost:3000/api/orders")
+    this.http.get<{[key:string]:Order}>(localStorage.getItem('url')+'/api/orders')
     .pipe(map(
       responseData => 
       {
